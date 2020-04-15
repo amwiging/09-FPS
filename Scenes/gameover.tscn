@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Fonts/Xolonium-Bold.otf" type="DynamicFontData" id=1]
+[ext_resource path="res://Fonts/Xolonium-Regular.otf" type="DynamicFontData" id=2]
+[ext_resource path="res://Scripts/Button.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 80
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 60
+font_data = ExtResource( 2 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = 0.111206
+margin_top = 2.11121
+margin_right = 2315.11
+margin_bottom = 1196.11
+color = Color( 0, 0, 0, 1 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 96.564
+margin_top = 144.457
+margin_right = 926.564
+margin_bottom = 241.457
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+text = "YOU GOT CAUGHT"
+
+[node name="retry" type="Button" parent="."]
+margin_left = 393.002
+margin_top = 346.334
+margin_right = 628.002
+margin_bottom = 426.334
+custom_fonts/font = SubResource( 2 )
+text = "Retry"
+script = ExtResource( 3 )
+[connection signal="pressed" from="retry" to="retry" method="_on_retry_pressed"]

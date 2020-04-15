@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Fonts/Xolonium-Bold.otf" type="DynamicFontData" id=1]
+[ext_resource path="res://Fonts/Xolonium-Regular.otf" type="DynamicFontData" id=2]
+[ext_resource path="res://Scripts/win-button.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 100
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 40
+font_data = ExtResource( 2 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 0.958008
+margin_bottom = 0.958008
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = 1.0
+margin_right = 1829.0
+margin_bottom = 1019.0
+color = Color( 0.0941176, 0.388235, 0.701961, 1 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 262.541
+margin_top = 125.212
+margin_right = 816.541
+margin_bottom = 245.212
+custom_fonts/font = SubResource( 1 )
+text = "YOU WIN"
+
+[node name="win-button" type="Button" parent="."]
+margin_left = 385.035
+margin_top = 312.102
+margin_right = 671.035
+margin_bottom = 432.102
+custom_fonts/font = SubResource( 2 )
+text = "PLAY AGAIN"
+script = ExtResource( 3 )
+[connection signal="pressed" from="win-button" to="win-button" method="_on_winbutton_pressed"]
