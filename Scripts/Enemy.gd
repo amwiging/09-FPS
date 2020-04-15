@@ -40,15 +40,3 @@ func _on_Timer_timeout():
 			change_state("scanning")
 	if state == "shooting":
 		get_tree().change_scene("res://Scenes/gameover.tscn")
-		
-		
-
-func _on_Nearby_body_entered(body):
-	if body.name == 'Player':
-		change_state("hiding")
-
-
-func _on_Nearby_body_exited(body):
-	if body.name == 'Player':
-		change_state("scanning")
-
